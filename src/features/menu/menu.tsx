@@ -1,5 +1,5 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { BarChartHorizontalBig } from "lucide-react";
+import { BarChartHorizontalBig, CodesandboxIcon, ImageIcon, LayoutDashboardIcon, MessageCircleIcon, SpeakerIcon, TextIcon, VoicemailIcon } from "lucide-react";
 import Link from "next/link";
 import { UserProfile } from "../user-profile";
 
@@ -15,6 +15,55 @@ export const MainMenu = () => {
           <Avatar className="">
             <AvatarImage src="/ai-icon.png" />
           </Avatar>
+        </Link>
+        <Link
+          href="/dashboard"
+          className="w-10 h-10 items-center justify-center flex rounded-full hover:bg-secondary"
+          title="Dashboard"
+        >
+          <LayoutDashboardIcon size={20} />
+        </Link>
+        <Link
+          href="/ai-chat"
+          className="w-10 h-10 items-center justify-center flex rounded-full hover:bg-secondary"
+          title="AI Caht"
+        >
+          <MessageCircleIcon size={20} />
+        </Link>
+        <Link
+          href="/ai-writer"
+          className="w-10 h-10 items-center justify-center flex rounded-full hover:bg-secondary"
+          title="AI Writer"
+        >
+          <TextIcon size={20} />
+        </Link>
+        <Link
+          href="/ai-code"
+          className="w-10 h-10 items-center justify-center flex rounded-full hover:bg-secondary"
+          title="AI Code"
+        >
+          <CodesandboxIcon size={20} />
+        </Link>
+        <Link
+          href="/ai-image"
+          className="w-10 h-10 items-center justify-center flex rounded-full hover:bg-secondary"
+          title="AI Image"
+        >
+          <ImageIcon size={20} />
+        </Link>
+        <Link
+          href="/ai-speech"
+          className="w-10 h-10 items-center justify-center flex rounded-full hover:bg-secondary"
+          title="AI Speech to Text"
+        >
+          <SpeakerIcon size={20} />
+        </Link>
+        <Link
+          href="/ai-voiceover"
+          className="w-10 h-10 items-center justify-center flex rounded-full hover:bg-secondary"
+          title="AI Voiceover"
+        >
+          <VoicemailIcon size={20} />
         </Link>
         <Link
           href="/reporting"
