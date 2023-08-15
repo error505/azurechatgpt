@@ -1,5 +1,6 @@
 "use client";
 
+import CopyButton from "@/features/common/copybutton";
 import { FC, memo } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -52,6 +53,7 @@ export const generateRandomString = (length: number, lowercase = false) => {
 const CodeBlock: FC<Props> = memo(({ language, value }) => {
   return (
     <div className="codeblock relative w-full font-sans">
+      <div className="flex right-50 self-end"><CopyButton message={value}/></div>  
       <SyntaxHighlighter
         language={language}
         style={coldarkDark}
