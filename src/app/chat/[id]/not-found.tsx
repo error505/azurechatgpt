@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { NewChat } from "@/features/chat/chat-menu/new-chat";
+import { QA } from "@/features/chat/chat-menu/new-qa";
 
 export default async function NotFound() {
   return (
@@ -10,6 +11,7 @@ export default async function NotFound() {
           <p className="text-sm text-muted-foreground">
             How about we start a new chat?
           </p>
+          <QA />
           <NewChat />
         </div>
       </div>

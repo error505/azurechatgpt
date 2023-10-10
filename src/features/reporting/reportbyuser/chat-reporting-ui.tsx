@@ -2,22 +2,17 @@ import ChatRow from "@/components/chat/chat-row";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FC } from "react";
-import { FindAllChatsInThread, FindChatThreadByID } from "./reporting-service";
-import { getBlob, getLogoData } from "@/features/common/blob";
-
+import { AI_NAME } from "../../theme/customise";
+import { FindAllChatsInThread, FindChatThreadByIDByUser } from "./reporting-service";
 
 interface Props {
   chatId: string;
 }
 
-export const ChatReportingUI: FC<Props> = async (props) => {
-  const chatThreads = await FindChatThreadByID(props.chatId);
+export const ChatReportingUIByUser: FC<Props> = async (props) => {
+  const chatThreads = await FindChatThreadByIDByUser(props.chatId);
   const chats = await FindAllChatsInThread(props.chatId);
   const chatThread = chatThreads[0];
-
-  const nameResult = await getBlob('customization.json');
-  const copilotName = JSON.parse(new TextDecoder("utf-8").decode(nameResult)).name;
-  const logoData = await getLogoData('logo.jpg');
 
   return (
     <Card className="h-full relative">
@@ -37,10 +32,8 @@ export const ChatReportingUI: FC<Props> = async (props) => {
         <div className=" pb-[80px] ">
           {chats.map((message, index) => (
             <ChatRow
-              name={
-                message.role === "user" ? chatThread.useName : copilotName
-              }
-              profilePicture={message.role === "user" ? "" : `data:image/jpg;base64,${logoData}`}
+              name={message.role === "user" ? chatThread.useName : AI_NAME}
+              profilePicture={message.role === "user" ? "" : "/ai-icon.png"}
               message={message.content}
               type={message.role}
               key={index}

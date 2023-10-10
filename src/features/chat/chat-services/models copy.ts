@@ -4,6 +4,7 @@ import { Message } from "ai";
 export const CHAT_DOCUMENT_ATTRIBUTE = "CHAT_DOCUMENT";
 export const CHAT_THREAD_ATTRIBUTE = "CHAT_THREAD";
 export const QA_THREAD_ATTRIBUTE = "QA_THREAD";
+export const AICODE_THREAD_ATTRIBUTE = "AICODE_THREAD";
 export const MESSAGE_ATTRIBUTE = "CHAT_MESSAGE";
 
 export interface ChatMessageModel {
@@ -46,6 +47,18 @@ export interface QAThreadModel {
   chatType: ChatType;
   conversationStyle: ConversationStyle;
   type: "QA_THREAD";
+}
+
+export interface AICODEThreadModel {
+  name: string;
+  model: LLMModel;
+  createdAt: Date;
+  userId: string;
+  useName: string;
+  isDeleted: boolean;
+  chatType: ChatType;
+  conversationStyle: ConversationStyle;
+  type: "AICODE_THREAD";
 }
 
 export interface PromptGPTBody {
