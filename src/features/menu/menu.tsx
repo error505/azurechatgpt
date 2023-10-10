@@ -1,5 +1,5 @@
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { BarChartHorizontalBig, CodesandboxIcon, ImageIcon, LayoutDashboardIcon, MessageCircleIcon, SpeakerIcon, TextIcon, VoicemailIcon } from "lucide-react";
+import { BarChartHorizontalBig, CodesandboxIcon, ImageIcon, LayoutDashboardIcon, MessageCircleIcon, Settings, SpeakerIcon, TextIcon, VoicemailIcon } from "lucide-react";
 import Link from "next/link";
 import { UserProfile } from "../user-profile";
 
@@ -24,9 +24,9 @@ export const MainMenu = () => {
           <LayoutDashboardIcon size={20} />
         </Link>
         <Link
-          href="/ai-chat"
+          href="/chat"
           className="w-10 h-10 items-center justify-center flex rounded-full hover:bg-secondary"
-          title="AI Caht"
+          title="AI Chat"
         >
           <MessageCircleIcon size={20} />
         </Link>
@@ -38,7 +38,7 @@ export const MainMenu = () => {
           <TextIcon size={20} />
         </Link>
         <Link
-          href="/ai-code"
+          href="/aicode"
           className="w-10 h-10 items-center justify-center flex rounded-full hover:bg-secondary"
           title="AI Code"
         >
@@ -71,6 +71,13 @@ export const MainMenu = () => {
           title="Reporting"
         >
           <BarChartHorizontalBig size={20} />
+        </Link>
+        <Link
+          href="/customization"
+          className="w-10 h-10 items-center justify-center flex rounded-full hover:bg-secondary"
+          title="Customization"
+        >
+          <Settings size={20} />
         </Link>
       </div>
       <UserProfile />
